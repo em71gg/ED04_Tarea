@@ -1,5 +1,16 @@
 package cuentas;
+
+/**
+ * Esta clase continen el método principal para manjar el funcionamiento de la clase cuenta
+ * @author Emilio Garruta
+ */
+
+
 public class Main {
+	/**
+	 * Método principal del programa
+	 * @param args los argumentos pasados al programa, no se usan en este programa
+	 */
 
     public static void main(String[] args) {
         CCuenta cuenta1;
@@ -9,7 +20,7 @@ public class Main {
     }
 
 	/**
-	 * @deprecated Use {@link #operativa_cuenta(double)} instead
+	 * @deprecated Usar {@link #operativa_cuenta(double)} 
 	 * 
 	 */
 	public static void operativa_cuenta() {
@@ -17,7 +28,13 @@ public class Main {
 	}
 
 	/**
-	 * @param cantidad TODO
+	 * 
+	 * El método operativa_cuenta crea un objeto tipo CCuenta dotándolo de un número de cuenta
+	 * un titular, una cantidad inicial en cuenta y un tipo de inteŕes
+	 * 
+	 * realiza un ingreso, capturando la excepción en el caso de que la cantidad ingresada no sea compatible 
+	 * con el método .retirar y maneja la retirada de fondos con el mismo concepto sobre el método .retirar 
+	 * @param cantidad No se usa, por desarrollar en el método
 	 * 
 	 */
 	public static void operativa_cuenta(double cantidad) {

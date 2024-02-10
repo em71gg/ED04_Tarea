@@ -1,15 +1,51 @@
 package cuentas;
-public class CCuenta {
 
+/**
+ * Esta clase representa una cuenta bancaria que permite realizar ingresos y retiradas.
+ *
+ * @author Emilio Garruta
+ * @version 2.0
+ */
+
+
+public class CCuenta {
+	//Atributos
+	 /**
+     * Nombre del titular
+     */
 
     private String nombre;
+    
+    /**
+     * Numeración de la cuenta
+     */
     private String cuenta;
+    
+    /**
+     * Saldo de la cuenta
+     */
     private double saldo;
-    private double tipoInterés;
+    
+    /**
+     * Tipo de interés aplicado
+     */
+    private double tipoInteres;
 
+	/**
+	 * Constructor por defecto.
+	*/
+    
     public CCuenta()
     {
     }
+    
+    /**
+     * Constructor con los parámetros definidos de la cuenta
+     * @param nom nombre del titular
+     * @param cue numeración de la cuenta
+     * @param sal saldo de la cuenta
+     * @param tipo tipo de interés no está siendo usado
+     */
 
     public CCuenta(String nom, String cue, double sal, double tipo)
     {
@@ -17,11 +53,24 @@ public class CCuenta {
         setCuenta(cue);
         setSaldo(sal);
     }
+    
+    //Metodos públicos
+    /**
+     * Devuelve al valor actual del saldo
+     * @return saldo devuelve el saldo actual de la cuenta
+     */
 
     public double estado()
     {
         return getSaldo();
     }
+    
+    /**
+     * Método público sin retorno que fija un nuevo valor al saldo
+     * en función de la cantidad ingresada
+     * @param cantidad La cantidad ingresada
+     * @throws Exception Si la cantidad ingresada es negativa
+     */
 
     public void ingresar(double cantidad) throws Exception
     {
@@ -29,6 +78,13 @@ public class CCuenta {
             throw new Exception("No se puede ingresar una cantidad negativa");
         setSaldo(getSaldo() + cantidad);
     }
+    
+    /**
+     * Método público sin retorno que fija un nuevo valor al saldo
+     * en función de la cantidad retirada
+     * @param cantidad la cantidad a retirar de la cuenta
+     * @throws Exception Si la cantidad es negativa o no hay suficiente saldo
+     */
 
     public void retirar(double cantidad) throws Exception
     {
@@ -40,58 +96,58 @@ public class CCuenta {
     }
 
 	/**
-	 * @return the nombre
+	 * @return nombre Obtiene el nombre del titular de la cuenta
 	 */
 	public String getNombre() {
 		return nombre;
 	}
 
 	/**
-	 * @param nombre the nombre to set
+	 * @param nombre Establece el nombre del titular de la cuenta
 	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
 	/**
-	 * @return the cuenta
+	 * @return cuenta Devuelve el número de cuentqa
 	 */
 	public String getCuenta() {
 		return cuenta;
 	}
 
 	/**
-	 * @param cuenta the cuenta to set
+	 * @param cuenta Fijael número de cuentqa
 	 */
 	public void setCuenta(String cuenta) {
 		this.cuenta = cuenta;
 	}
 
 	/**
-	 * @return the saldo
+	 * @return saldo Devuelve el saldo
 	 */
 	public double getSaldo() {
 		return saldo;
 	}
 
 	/**
-	 * @param saldo the saldo to set
+	 * @param saldo fija el saldo
 	 */
 	public void setSaldo(double saldo) {
 		this.saldo = saldo;
 	}
 
 	/**
-	 * @return the tipoInterés
+	 * @return tipoInteres Devuelve el  tipo de interés
 	 */
-	public double getTipoInterés() {
-		return tipoInterés;
+	public double getTipoInteres() {
+		return tipoInteres;
 	}
 
 	/**
-	 * @param tipoInterés the tipoInterés to set
+	 * @param tipoInteres fija el tipo de interés
 	 */
-	public void setTipoInterés(double tipoInterés) {
-		this.tipoInterés = tipoInterés;
+	public void setTipoInteres(double tipoInteres) {
+		this.tipoInteres = tipoInteres;
 	}
 }
